@@ -15,7 +15,7 @@ if (cluster.isMaster) {
   const bodyParser = require("body-parser");
   const path = require('path');
   const fs = require('fs');
-  const db = require('./databases/db_pg/controllers/index.js');
+  const db = require('../database/controllers/index.js');
   const app = express();
   const port = process.env.PORT || 3002;
   const cors = require('cors');

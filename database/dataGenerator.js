@@ -1,10 +1,10 @@
-const fs = require('fs');
-const csvWriter = require('csv-write-stream')
-const output = 'seedData.csv';
+var fs = require('fs');
+var csvWriter = require('csv-write-stream')
+var output = 'seedData.csv';
 require('datejs');
 
 
-const makeObj = (propId, checkin, checkout) => {
+var makeObj = (propId, checkin, checkout) => {
   return {
     propId,
     checkin,
@@ -12,11 +12,11 @@ const makeObj = (propId, checkin, checkout) => {
   }
 }
 
-const getRandomNum = () => {
+var getRandomNum = () => {
   return Math.floor(Math.random() * 6) + 1;
 }
 
-const getDates= q => {
+var getDates= q => {
   var checkinDate = Date.august().first().monday().toString("yyyy/M/d");
   var checkoutDate = Date.august().first().monday().addDays(getRandomNum()).toString("yyyy/M/d");
   if (q === 2) {
@@ -28,7 +28,8 @@ const getDates= q => {
   }
   return [checkinDate, checkoutDate];
 }
-const makeData = (num) => {
+
+var makeData = (num) => {
   var data = [];
   for (var i = 1; i < num; i++) {
     for (var q = 1; q < 4; q++) {
@@ -40,8 +41,10 @@ const makeData = (num) => {
 }
 
 var data = makeData(10000000);
+
 var headers = ["propId", "checkin", "checkout"];
-const writeData = (headers, data, output) => {
+
+var writeData = (headers, data, output) => {
   var writer = csvWriter({ headers })
   writer.pipe(fs.createWriteStream(output))
   for (var obj of data) {
