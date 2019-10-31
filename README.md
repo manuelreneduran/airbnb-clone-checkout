@@ -1,13 +1,6 @@
 # Project Name
 
-> Project description
-
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+> airbnb-clone-checkout
 
 ## Table of Contents
 
