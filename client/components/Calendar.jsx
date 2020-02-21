@@ -24,14 +24,6 @@ class Calendar extends React.Component {
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClick, false);
-    var id = this.getId();
-    fetch(`http://localhost:3002/checkout/prop/${id}`)
-    .then(res => res.json())
-    .then((json) => {
-      this.setState({
-        blockedDates: json
-      });
-    });
   }
 
   getId() {

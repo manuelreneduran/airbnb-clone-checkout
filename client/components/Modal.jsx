@@ -4,7 +4,6 @@ import Ratings from './Ratings.jsx';
 import GuestModal from './GuestModal.jsx';
 import Button from './AirbnbButton.jsx';
 import Calendar from './Calendar.jsx';
-import FacebookLogin from './FacebookLogin.jsx'
 import classNames from 'classnames';
 
 class Modal extends React.Component {
@@ -87,20 +86,7 @@ class Modal extends React.Component {
     } else if (!this.state.endDate) {
       document.getElementById('endDate').focus();
     } else {
-      var id = this.getId();
-      fetch(`http://localhost:3002/checkout/book/${id}`, {
-        method: 'POST',
-        body: JSON.stringify({
-          checkin: this.state.startDate,
-          checkout: this.state.endDate
-        }),
-        headers: {
-          'Content-type': 'application/json'
-        }
-      })
-      .then(() => {
-        this.props.handleClose();
-      });
+      this.props.handleClose();
     }
   }
 

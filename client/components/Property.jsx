@@ -9,14 +9,6 @@ class Property extends React.Component {
     };
   }
 
-  getName() {
-    //ajax call
-  }
-
-  getNumberOfReviews() {
-    //ajax call
-  }
-
   render() {
     return (
       <div id="property">

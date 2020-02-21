@@ -8,10 +8,6 @@ class Price extends React.Component {
     };
   }
 
-  getPrice() {
-    //ajax call
-  }
-
   render() {
     return (
       <div id="price">
