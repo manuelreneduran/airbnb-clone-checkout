@@ -5,8 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "start": "nodemon server/server.js",
-    "seed": "node server/db/seed.js",
+    "start": "node server/server.js",
     "test": "jest"
   },
   "keywords": [],
